@@ -35,8 +35,8 @@ class Coffee(models.Model):
     water = models.FloatField(default=0)
     steamed_milk = models.BooleanField(default=False)
     foam = models.FloatField(default = 0)
-    powder = models.ForeignKey(Powder)
-    syrup = models.ForeignKey(Syrup)
+    powder = models.ManyToManyField(Powder)
+    syrup = models.ManyToManyField(Syrup)
     extra_instructions = models.TextField()
 
     def __str__(self):
