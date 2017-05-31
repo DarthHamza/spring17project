@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load crispy_forms_tags %}
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit Roast</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  </head>
+  <body>
+    <div class="container">
+    <form class="" action="{% url 'editRoast' roast_id=roast.id %}" method="post">
+      {% csrf_token %}
+      {{form|crispy}}
+      <input class="btn btn-primary" type="submit" name="" value="Edit">
+    </form>
+    </div>
+  </body>
+  <script src="{% static 'js/bootstrap.min.js' %}" ></script>
+</html>
