@@ -3,6 +3,9 @@ from .views import *
 
 urlpatterns = [
     url(r'^$', home, name="home"),
+    url(r'^user_list/$', user_list, name="user_list"),
+    url(r'^user_coffees/(?P<user_id>[0-9]+)/$', user_coffees, name="user_coffees"),
+    
     url(r'^createCoffee/$', createCoffee, name="createCoffee"),
     url(r'^editCoffee/(?P<coffee_id>[0-9]+)/$', editCoffee, name="editCoffee"),
 
