@@ -5,4 +5,20 @@ urlpatterns = [
     url(r'^$', home, name="home"),
     url(r'^createCoffee/$', createCoffee, name="createCoffee"),
     url(r'^editCoffee/(?P<coffee_id>[0-9]+)/$', editCoffee, name="editCoffee"),
+
+    url(r'^createBean/$', createBean, name="createBean"),
+    url(r'^editBean/(?P<bean_id>[0-9]+)/$', editBean, name="editBean"),
+    url(r'^deleteBean/(?P<bean_id>[0-9]+)/$', deleteBean, name="deleteBean"),
+
+    url(r'^createRoast/$', createRoast, name="createRoast"),
+    url(r'^editRoast/(?P<roast_id>[0-9]+)/$', editRoast, name="editRoast"),
+    url(r'^deleteRoast/(?P<roast_id>[0-9]+)/$', deleteRoast, name="deleteRoast"),
+
+    url(r'^createSyrup/$', createSyrup, name="createSyrup"),
+    url(r'^editSyrup/(?P<syrup_id>[0-9]+)/$', editSyrup, name="editSyrup"),
+    url(r'^deleteSyrup/(?P<syrup_id>[0-9]+)/$', deleteSyrup, name="deleteSyrup"),
+
+    url(r'^createPowder/$', createPowder, name="createPowder"),
+    url(r'^editPowder/(?P<powder_id>[0-9]+)/$', editPowder, name="editPowder"),
+    url(r'^deletePowder/(?P<powder_id>[0-9]+)/$', deletePowder, name="deletePowder"),
 ]
