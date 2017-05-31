@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^createPowder/$', createPowder, name="createPowder"),
     url(r'^editPowder/(?P<powder_id>[0-9]+)/$', editPowder, name="editPowder"),
     url(r'^deletePowder/(?P<powder_id>[0-9]+)/$', deletePowder, name="deletePowder"),
+    url(r'^createOrder/(?P<coffee_id>[0-9]+)/$', createOrder, name="createOrder"),
 ]
