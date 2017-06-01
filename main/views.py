@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from .forms import *
 import datetime
+from django.core.mail import send_mail
+from django.conf import settings
 
 def createCoffee(request):
     context = {}
@@ -250,3 +252,19 @@ def home(request):
     coffee_list = Coffee.objects.filter(user=user)
     context['coffee_list']=coffee_list
     return render(request, 'home.html', context)
+
+def send_order_email(request, year, month, day):
+    context = {}
+    date = datetime.datetime.strptime('%s%s%s'%(year, month, day), "%Y%m%d").date()
+    print ("============")
+    print (date)
+    print ("============")
+    order_list = Order.objects.filter(user=request.user, date=date)
+    subject = "HAHAA SPAAAAAM I OWN YOU!!! YOU ARE A NOOB!"
+    message = "These are my orders, make yourself useful and get them:\n"
+    for order in order_list:
+        message += "%s, "%(order.coffee)
+    print (message)
+    print (date)
+    send_mail(subject, message, settings.EMAIL_HOST_USER, ['alsaff1987@gmail.com',])
+    return redirect("home")
