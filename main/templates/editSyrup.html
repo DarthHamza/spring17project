@@ -1,20 +1,11 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 {% load crispy_forms_tags %}
-{% load static %}
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Edit Syrup</title>
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-  </head>
-  <body>
-    <div class="container">
+
+{% block header %} Edit Syrup{% endblock %}
+{% block content %}
     <form class="" action="{% url 'editSyrup' syrup_id=syrup.id %}" method="post">
       {% csrf_token %}
       {{form|crispy}}
       <input class="btn btn-primary" type="submit" name="" value="Edit">
     </form>
-    </div>
-  </body>
-  <script src="{% static 'js/bootstrap.min.js' %}" ></script>
-</html>
+{% endblock %}
