@@ -3,6 +3,8 @@ from .views import *
 
 urlpatterns = [
     url(r'^$', home, name="home"),
+    url(r'^logout/$', logout_view, name="logout"),
+    url(r'^naughty_page/$', naughty_page, name="naughty_page"),
     url(r'^user_list/$', user_list, name="user_list"),
     url(r'^user_coffees/(?P<user_id>[0-9]+)/$', user_coffees, name="user_coffees"),
     url(r'^send_order_email/(?P<year>\d{4})-(?P<month>\d{1,2})-(?P<day>\d{1,2})/$', send_order_email, name="send_order_email"),
