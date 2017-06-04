@@ -256,15 +256,16 @@ def home(request):
 def send_order_email(request, year, month, day):
     context = {}
     date = datetime.datetime.strptime('%s%s%s'%(year, month, day), "%Y%m%d").date()
-    print ("============")
-    print (date)
-    print ("============")
     order_list = Order.objects.filter(user=request.user, date=date)
     subject = "HAHAA SPAAAAAM I OWN YOU!!! YOU ARE A NOOB!"
+    subject2 = "Coded coffee requests"
     message = "These are my orders, make yourself useful and get them:\n"
     for order in order_list:
         message += "%s, "%(order.coffee)
-    print (message)
-    print (date)
+
+    message2 = "Today's orders\n"
+    for order in order_list:
+        message2 += "%s, "%(order.coffee)
     send_mail(subject, message, settings.EMAIL_HOST_USER, ['alsaff1987@gmail.com',])
+    send_mail(subject2, message2, settings.EMAIL_HOST_USER, ['hashim@joincoded.com',])
     return redirect("home")

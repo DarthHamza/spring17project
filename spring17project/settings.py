@@ -26,10 +26,10 @@ SECRET_KEY = 'sd0d626b)-pwu3yyar^um@6qh_)1&zgmos)-nv@ng#6$l=8=60'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-EMAIL_USE_TLS = True 
+EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'youremail@gmail.com'
-EMAIL_HOST_PASSWORD = 'YourPassword!@#?'
+EMAIL_HOST_USER = 'hamza@joincoded.com'
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 
 
